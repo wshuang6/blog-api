@@ -22,11 +22,27 @@ router.post('/', jsonParser, (req, res) => {
     if(!req.body.hasOwnProperty(item)) {
       let message = `Missing ${item}`;
       console.error(message);
-      res.status(400).send(message);
+      return res.status(400).send(message);
     }
   });
   BlogPosts.create(req.body.title, req.body.content, req.body.author);
   res.status(201).end();
+});
+
+router.delete('/:id', (req, res) => {
+  let message = `Post ID ${req.params.id} does not exist`;
+  BlogPosts.posts.forEach(function(object, i) {
+    if (req.params.id === object.id) {
+      let message = `Post ID ${req.params.id} has been deleted`;
+      BlogPosts.posts.splice(i, 1);
+      return res.status(200).send(message);
+    }
+  });
+  res.status(400).send(message);
+});
+
+router.put('/:id', (req, res) => {
+  let message = `Post ID ${req.params.id} does not exist`;
 });
 
 module.exports = { 
