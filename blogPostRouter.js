@@ -41,8 +41,19 @@ router.delete('/:id', (req, res) => {
   res.status(400).send(message);
 });
 
-router.put('/:id', (req, res) => {
+router.put('/:id', jsonParser, (req, res) => {
+  BlogPosts.posts.forEach(function(item, index){
+    if (req.body.id === item.id) {
+      item.title = req.body.title;
+      item.author = req.body.author;
+      item.content = req.body.content;
+      let message = `blog item ${item.title} updated`;
+      return res.status(200).json(item);
+    }
+  });
   let message = `Post ID ${req.params.id} does not exist`;
+  console.error(message);
+  return res.status(400).send(message);
 });
 
 module.exports = { 
