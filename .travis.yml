@@ -1,2 +1,9 @@
 language: node_js
 node_js: node
+deploy:
+  provider: heroku
+  api_key:
+    secure: JKnW2zsf5tfOpnuId2U5UUTbJcCifPw/yh9a6FKcg2KpK344TE2qJvQaTDpjPADGvFiuYsTyh6Rz3esoO0T/NKW9ogdKKL3mOjKDMJet0tcoNR/Am4a1MB4X8qIV8IiDSBKeT6eyqWTuWBbnFn0Qd8i2s08OGdrUhlsXj+e2SJv4VvykHFMTXA6eNPYLJJFXegIUFz2iqWSqb41R9ptmPoQ008lYsRUa+EYBtfHubmgFkuYmn7FSk/PcuAY6nIzFWOqZPnEsfEUxcFg0/pjpxVqhApna7lEYFU7zMO7RlM6FWwS8o0jBfHbfIj5s7ny02DXMeN90PT4UFs7NW5Bxqwu6lEq6zWDbw993bBktHUtgSma36uEIIOMguXcNxEREWNe2VNDFvKXTjUlZqTpqBaPowUpJYoi1+TpC2/p32c/jbIa63PhDA3aUfRFwjzF6CBOkR2vbBQ3MGJsgwGqFyfr36GRCclTmh2Vb2U/sUa8TQOQP2JxxCf+14IvvcInJS3ybdgo9BYPssLqoYUdBuC/d4tYs6qE+equQjMSij0i6EfK2FeKQ8UU0E9jIt5AllSNexfkMwTdlK7zGZ10xA5l14A5/zs/Lcw6d7kNvGFH/8PXFx808BnXMEJldVkCNM8PImr3t+73l1ToC5ynnLg/PKTbhI4/vG0eadniHqVA=
+  app: enigmatic-fortress-38410
+  on:
+    repo: wshuang6/blog-api
