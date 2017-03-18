@@ -4,7 +4,7 @@
   "description": "thinkful blog api",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha",
     "start": "nodemon server.js"
   },
   "author": "Peter and William",
@@ -14,5 +14,9 @@
     "express": "^4.15.2",
     "morgan": "^1.8.1",
     "uuid": "^3.0.1"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.2.0"
   }
 }
